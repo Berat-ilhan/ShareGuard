@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "shareguard"
+version = "0.3.0"
+description = "Windows-first pre-share folder auditor and safe package builder"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "ShareGuard Project" }]
+dependencies = [
+  "PySide6==6.5.3",
+  "Pillow>=10.0,<12",
+  "pypdf>=4.0,<6",
+]
+
+[project.gui-scripts]
+shareguard = "shareguard.app:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
